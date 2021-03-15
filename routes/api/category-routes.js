@@ -31,11 +31,11 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'category_id'],
+    attributes: ['id', 'category_name'],
     include: [
       {
         model: Product, 
-        attributes: ['product_name', 'price', 'stock']
+        attributes: ['id','product_name', 'price', 'stock', "category_id"]
       }
     ]
   })
